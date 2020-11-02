@@ -1,0 +1,68 @@
+<ion-view view-title=" puanmatik">
+  <ion-content>
+
+<!--Bilgilendirme amaçlı-->
+    <div class="ortala">
+      <div class="item item-text-wrap item-positive">
+        Lütfen Net Bilgilerinizi Giriniz!
+      </div>
+    </div>
+
+
+    <!--Net oranları-->
+    <div class="list">
+
+    <!--Matematik Bilgisi-->
+      <div class=" range range-positive">
+        Mat
+        <input type="range" ng-model="mat" min="0" max="20" ng-change=hesapla(mat,tur,sos,fen,ink,din,ing)>
+        {{mat}} Net
+      </div>
+    
+   <!--Türkçe Bilgisi-->
+      <div class=" range range-positive">
+        Tür
+        <input type="range" ng-model="tur" min="0" max="20" ng-change=hesapla(mat,tur,sos,fen,ink,din,ing)>
+        {{tur}} Net
+      </div>
+    
+
+    <!--Atatürkçülük ve İnkilap Bilgisi-->
+      <div class=" range range-positive">
+        İnk
+        <input type="range" ng-model="ink" min="0" max="10" ng-change=hesapla(mat,tur,sos,fen,ink,din,ing)>
+        {{ink}} Net
+      </div>
+
+      <!--Din Kültürü Bilgisi-->
+      <div class=" range range-positive">
+        Din
+        <input type="range" ng-model="din" min="0" max="10" ng-change=hesapla(mat,tur,sos,fen,ink,din,ing)>
+        {{din}} Net
+      </div>
+
+      <!--İngilizce Bilgisi-->
+      <div class=" range range-positive">
+        İng
+        <input type="range" ng-model="ing" min="0" max="10" ng-change=hesapla(mat,tur,sos,fen,ink,din,ing)>
+        {{ing}} Net
+      </div>
+    
+    <!--Fen Bilgisi-->
+      <div class=" range range-positive">
+        Fen
+        <input type="range" ng-model="fen" min="0" max="20" ng-change=hesapla(mat,tur,sos,fen,ink,din,ing)>
+        {{fen}} Net
+      </div>
+    </div>
+
+    <!--Sonuç Bilgisi-->
+    <div class="ortala">
+      <div class="item item-text-wrap item-assertive">
+        <h1>LGS Puanın:&nbsp;{{sonuc | number:0}} </h1>
+        <h2>{{sonuc >450 ? 'Süpersin' : sonuc >380 ? 'Olucak Bu İş' : sonuc >280 ? 'Başarıcaksın biliyorum!' : ''}} </h2>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
